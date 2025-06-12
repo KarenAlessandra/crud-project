@@ -19,9 +19,11 @@ const AddProduct = (props: Props) => {
     const onProductNameChangeHnd = (e: any) => {
         setProductName(e.target.value);
     }
-    const onProductPriceChangeHnd = (e: any) => {
-        setProductPrice(e.target.value);
-    }
+const onProductPriceChangeHnd = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setProductPrice(value === "" ? 0 : Number(value));
+};
+
     const onProductDescriptionChangeHnd = (e: any) => {
         setProductDescription(e.target.value);
     }
